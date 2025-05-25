@@ -1,0 +1,88 @@
+{
+  "experience": [
+    {
+      "title": "Software Engineer @ UBS",
+      "subtitle": "Sept. 2024 – Present @ Zürich, Switzerland",
+      "bullets": [
+        "Working on Data Masking and Synthetic Data Generation tool. Powered by Pandas and Spark. Used by 10+ different departments across UBS.",
+        "Implemented automated integration testing for PostgreSQL, SQL Server, and DB2 via GitLab CI/CD, PyTest, and SQLAlchemy – streamlining method rollout and reducing developer overhead.",
+        "Developing a decentralized microservice using Helm, Kubernetes (AKS), Docker, Azure and Kafka."
+      ]
+    },
+    {
+      "title": "Data Scientist Intern @ Swiss Federal Department of Defence",
+      "subtitle": "Feb. 2023 – Aug. 2023 @ Lausanne, Switzerland",
+      "bullets": [
+        "Implemented an LLM-based (GPT-3) pipeline for extracting relationships in news articles. (GitHub)",
+        "Developed a HuggingFace Transformers Pipeline with multiple smaller transformers and entity resolution. Resulted in 33% higher F1-score than the LLM approach, and a 10x speed-up.",
+        "Developed a Retrieval-Augmented ChatBot using news article info in Python using Flask, CSS, LLamaIndex, and OpenAI API. (GitHub)"
+      ]
+    },
+    {
+      "title": "Machine Learning Research Intern @ EPFL, Signal Processing Lab",
+      "subtitle": "July 2022 – Oct. 2022 @ Lausanne, Switzerland",
+      "bullets": [
+        "Trained custom 3D CNN models in PyTorch and TensorFlow for medical image segmentation, to detect kidney cancer in children. Training monitored using TensorBoard. (GitHub)",
+        "Developed a novel training data sampler for unbalanced data and small structures using Numpy, improving results on vascular structures by up to 20%."
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "authors": "André Charneca, Robert West, et al.",
+      "title": "Large Language Models for Web Browsing in the case of Wikipedia",
+      "venue": "Wiki Workshop 2025",
+      "link": "https://wikiworkshop.org/2025/paper/wikiworkshop_2025_paper_63.pdf",
+      "bullets": [
+        "Test 1",
+        "Test 2"
+      ]
+    },
+    {
+      "authors": "André Charneca, Angelika Romanou, et al.",
+      "title": "Leveraging Language Models for Company and Product Relation Extraction from News Articles",
+      "venue": "Global Tech Mining Conference 2023",
+      "link": "https://vpinstitute.org/wp-content/uploads/2024/09/tehmining_knowledge_models.pdf",
+      "bullets": [
+        "Test 1",
+        "Test 2"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "LLM Agent for Wikipedia Navigation",
+      "location": "Lausanne",
+      "period": "Sept. 2023 – Jan. 2024",
+      "description": "Built an LLM Agent Framework from scratch with Async Python (OOP), HuggingFace and HTML. Eliminated hallucinations in open-source LLMs via constrained decoding, beating ChatGPT by 17%. Conducted large-scale experiments on a GPU cluster using Hydra, Docker and Kubernetes.",
+      "grade": "6/6"
+    },
+    {
+      "title": "Image Processing Library in C++",
+      "location": "",
+      "period": "",
+      "description": "Implemented image algorithms (denoising, contours, etc.) in C++ using Eigen, OpenCV, and CMake. Used Test Driven Development with Google Test framework, achieving 90% code coverage.",
+      "grade": ""
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc in Computational Science and Engineering",
+      "school": "EPFL",
+      "location": "Lausanne",
+      "period": "Sep. 2021 - Feb. 2024",
+      "details": "Focus on Data Science and Machine Learning. Grade average: 5.6/6."
+    },
+    {
+      "degree": "BSc in Engineering Physics",
+      "school": "Instituto Superior Técnico",
+      "location": "Lisbon",
+      "period": "Sep. 2018 - July 2021",
+      "details": "Ranked 1 out of 60 – best student award. Grade average: 18.1/20"
+    }
+  ],
+  "other": {
+    "languages": ["Portuguese (Native)", "English (Fluent, TOEFL 112/120)", "French (B1)", "Spanish (B1)"],
+    "skills": ["Scikit-learn", "Matplotlib", "SQL", "AWS", "Git", "Linux", "VSCode", "Keras", "Generative AI", "Rust", "Relational Databases", "REST API"]
+  }
+}
