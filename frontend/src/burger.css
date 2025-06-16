@@ -1,0 +1,21 @@
+.bm-burger-button {
+  position: fixed;
+  width: 26px;
+  height: 20px;
+  right: 1.5rem;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.bm-burger-bars {
+  background: #111827; /* dark by default, you can overwrite via class */
+}
+
+.bm-menu-wrap {
+  top: 0;
+  height: 100%;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}

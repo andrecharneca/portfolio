@@ -1,9 +1,17 @@
+import { slide as Menu } from "react-burger-menu";
 import { useEffect, useState } from "react";
-
 interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (val: boolean) => void;
 }
+
+const sections = [
+  "experience",
+  "publications",
+  "projects",
+  "education",
+  "other",
+];
 
 export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   const [show, setShow] = useState(true);
@@ -28,32 +36,41 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 shadow-md transition-transform duration-300 ${
-        show ? "translate-y-0" : "-translate-y-full"
-      } bg-white dark:bg-gray-900 px-6 py-4 flex items-center justify-between`}
-    >
-      <h1 className="text-2xl font-bold">André Charneca</h1>
+    <>
+      <h1 className="fixed top-4 left-6 text-2xl font-bold z-50 text-gray-900 dark:text-gray-100">
+        André Charneca
+      </h1>
 
-      <div className="flex gap-6 items-center">
-        {["experience", "publications", "projects", "education", "other"].map(
-          (section) => (
-            <button
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className="uppercase font-semibold hover:text-emerald-500 dark:hover:text-purple-600 hover:drop-shadow-glow-green dark:hover:drop-shadow-glow-purple"
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </button>
-          )
-        )}
+      <Menu
+        right
+        className={
+          darkMode ? "bg-gray-900 text-gray-100" : "bg-white text-gray-900"
+        }
+        itemListClassName="flex flex-col p-6 space-y-4"
+        styles={{
+          bmBurgerBars: {
+            background: darkMode ? "#fff" : "#111827",
+          },
+        }}
+      >
+        {sections.map((section) => (
+          <button
+            key={section}
+            onClick={() => scrollToSection(section)}
+            className={`uppercase font-semibold text-left hover:text-emerald-500 dark:hover:text-purple-600 hover:drop-shadow-glow-green dark:hover:drop-shadow-glow-purple`}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </button>
+        ))}
+
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="border px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+          className="border mt-6 px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
         >
           {darkMode ? "Light Mode" : "Dark Mode"}
         </button>
-      </div>
-    </nav>
+      </Menu>
+    </>
   );
 }
+

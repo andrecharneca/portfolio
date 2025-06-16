@@ -7,7 +7,10 @@ interface AnimatedSectionTitleProps {
   className?: string;
 }
 
-export default function AnimatedSectionTitle({ children, className = "" }: AnimatedSectionTitleProps) {
+export default function AnimatedSectionTitle({
+  children,
+  className = "",
+}: AnimatedSectionTitleProps) {
   const ref = useRef<HTMLHeadingElement>(null);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -22,7 +25,7 @@ export default function AnimatedSectionTitle({ children, className = "" }: Anima
           setShouldAnimate(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -33,10 +36,7 @@ export default function AnimatedSectionTitle({ children, className = "" }: Anima
   }, []);
 
   return (
-    <h2
-      ref={ref}
-      className={`text-3xl font-bold mb-4 opacity-0 ${className}`}
-    >
+    <h2 ref={ref} className={`text-5xl font-extrabold mb-4 ${className}`}>
       {children}
     </h2>
   );

@@ -35,21 +35,20 @@ type CV = {
   other: Other;
 };
 
-
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [cv, setCv] = useState<CV | null>(null);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/profile')
-      .then(res => res.json())
-      .then(data => setProfile(data))
-      .catch(err => console.error('Failed to fetch profile:', err));
+    fetch("http://localhost:8080/api/profile")
+      .then((res) => res.json())
+      .then((data) => setProfile(data))
+      .catch((err) => console.error("Failed to fetch profile:", err));
   }, []);
 
   useEffect(() => {
@@ -66,45 +65,27 @@ export default function App() {
     }
   }
 
-  if (!cv) return <div>Loading CV...</div>;
+  if (!cv) return <div>Fetching information...</div>;
 
   return (
-    <div className=" transition-colors duration-500 bg-white text-black dark:bg-gray-900 dark:text-white">
-      <div className="relative">
-      <Navbar
-        darkMode={darkMode}
-        setDarkMode={setDarkMode} />
-        <ProfileSection profile={profile} />
-        <div className="sticky top-0 min-h-dvh flex flex-col items-center justify-center text-white bg-gray-700">
-            <h2 className="text-4xl font-bold flex">Here's where I've worked.</h2>
-            <h3 className="mt-2">Keep scrolling...</h3>
-        </div>
-        <ExperienceSection paragraphs={cv.experience} />
-        <div className="sticky top-0 h-dvh flex flex-col items-center justify-center text-white bg-gray-700">
-            <h2 className="text-4xl font-bold flex">Next up, academic publications!</h2>
-            <h3 className="mt-2">Hope you like Large Language Models...</h3>
-        </div>
-        <PublicationsSection paragraphs={cv.publications} />
-        <div className="sticky top-0 h-dvh flex flex-col items-center justify-center text-white bg-gray-700">
-            <h2 className="text-4xl font-bold flex">Next up, academic publications!</h2>
-            <h3 className="mt-2">Hope you like Large Language Models...</h3>
-        </div>
-        <ExperienceSection paragraphs={cv.experience} />
-      </div>
+    <div className="transition-colors duration-500 bg-amber-50 text-amber-950 dark:bg-gray-900 dark:text-white">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <ProfileSection profile={profile} />
+      <ExperienceSection paragraphs={cv.experience} />
+      <PublicationsSection paragraphs={cv.publications} />
 
-
-
-      
       <main className="pt-20 px-6 max-w-4xl mx-auto space-y-12">
-
         {/* Projects Section */}
         <section id="projects">
-          <h2 className="text-3xl font-bold mb-4"><br></br>Projects</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            <br></br>Projects
+          </h2>
           {cv.projects.map((proj, idx) => (
             <div key={idx} className="mb-6">
               <h3 className="text-xl font-semibold">{proj.title}</h3>
               <p className="italic text-gray-600 mb-1">
-                {proj.location} — {proj.period} {proj.grade && `— Grade: ${proj.grade}`}
+                {proj.location} — {proj.period}{" "}
+                {proj.grade && `— Grade: ${proj.grade}`}
               </p>
               <p>{proj.description}</p>
             </div>
